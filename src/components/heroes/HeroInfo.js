@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
+import { heroImages } from "../../helpers/heroImages";
 
-const heroImages = require.context("../../assets/img");
+
+
 
 export const HeroInfo = (hero) => {
   const { id, superhero, publisher, alter_ego, first_appearance, characters } =
