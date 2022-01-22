@@ -1,15 +1,10 @@
 import { useNavigate } from "react-router-dom";
 
+const heroImages = require.context("../../assets/img");
+
 export const HeroInfo = (hero) => {
-  const {
-    id,
-    superhero,
-    publisher,
-    alter_ego,
-    first_appearance,
-    characters,
-    url
-  } = hero;
+  const { id, superhero, publisher, alter_ego, first_appearance, characters } =
+    hero;
   const path = `/${id.split("-")[0]}`;
   const navigate = useNavigate();
 
@@ -17,13 +12,11 @@ export const HeroInfo = (hero) => {
     navigate(path);
   };
 
-  const image = require(`../../assets/img/${id}.jpg`);
-
   return (
     <div className="row mt-5">
       <div className="col-3">
         <img
-          src={image}
+          src={heroImages(`./${id}.jpg`)}
           className="img-thumbnail animate__animated animate__zoomIn"
           alt=""
         />
