@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 
 export const HeroInfo = (hero) => {
-  const { id, superhero, publisher, alter_ego, first_appearance, characters,url } =
-    hero;
-  const image = url;
+  const {
+    id,
+    superhero,
+    publisher,
+    alter_ego,
+    first_appearance,
+    characters,
+    url
+  } = hero;
   const path = `/${id.split("-")[0]}`;
   const navigate = useNavigate();
 
@@ -11,10 +17,16 @@ export const HeroInfo = (hero) => {
     navigate(path);
   };
 
+  const image = require(`../../assets/img/${id}.jpg`);
+
   return (
     <div className="row mt-5">
       <div className="col-3">
-        <img src={image} className="img-thumbnail animate__animated animate__zoomIn" alt=""/>
+        <img
+          src={image}
+          className="img-thumbnail animate__animated animate__zoomIn"
+          alt=""
+        />
       </div>
       <div className="col-8 animate__animated animate__zoomIn">
         <h3>{superhero}</h3>

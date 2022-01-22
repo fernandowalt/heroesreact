@@ -9,15 +9,15 @@ export const HeroCard = ({
   characters,
   url,
 }) => {
-  const imagePath = url;
-  console.log(url);
+  
+  const path = require(`../../assets/img/${id}.jpg`);
 
   return (
     <div className="col animate__animated animate__fadeIn">
       <div className="card">
         <div className="row no-gutters">
           <div className="col-4">
-            <img src={imagePath} className="card-img" alt={superhero} />
+            <img src={path} className="card-img" alt={superhero} />
           </div>
           <div className="col-8">
             <div className="card-body">
